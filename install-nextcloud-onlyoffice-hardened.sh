@@ -114,7 +114,7 @@ chown -R www-data:www-data /var/www/nextcloud
 
 msg "Configuring NGINX for Nextcloud"
 systemctl stop nginx || true # Ensure nginx is not running with old config
-file_exists_warn "/etc/nginx/sites-available/nextcloud.conf"
+#file_exists_warn "/etc/nginx/sites-available/nextcloud.conf"
 cat >/etc/nginx/sites-available/nextcloud.conf <<EOF
 server {
     listen 80;
@@ -163,7 +163,7 @@ else
 fi
 
 msg "Configuring NGINX for OnlyOffice"
-file_exists_warn "/etc/nginx/sites-available/onlyoffice.conf"
+#file_exists_warn "/etc/nginx/sites-available/onlyoffice.conf"
 cat >/etc/nginx/sites-available/onlyoffice.conf <<EOF
 server {
     listen 8080;
