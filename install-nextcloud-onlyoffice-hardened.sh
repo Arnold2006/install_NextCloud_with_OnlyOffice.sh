@@ -107,7 +107,7 @@ if [[ -z "$EXTRACTED_DIR" ]]; then
     exit 1
 fi
 
-mv "$EXTRACTED_DIR" /var/www/nextcloud
+#mv "$EXTRACTED_DIR" /var/www/nextcloud
 
 mkdir -p /var/www/nextcloud/data
 chown -R www-data:www-data /var/www/nextcloud
