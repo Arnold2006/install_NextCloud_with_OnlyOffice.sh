@@ -146,12 +146,11 @@ nginx -t && systemctl restart nginx
 msg "Installing OnlyOffice Document Server dependencies (nodejs, fonts)"
 is_installed fonts-dejavu-core || apt install -y fonts-dejavu-core
 
-msg "Adding OnlyOffice repo and key"
-curl -sL https://download.onlyoffice.com/repo/onlyoffice.key | gpg --dearmor -o /usr/share/keyrings/onlyoffice.gpg
-echo "deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian/ squeeze main" \
-    > /etc/apt/sources.list.d/onlyoffice.list
 
-apt update
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+echo "deb https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list
+apt-get update
+
 is_installed onlyoffice-documentserver || apt install -y onlyoffice-documentserver
 
 msg "Configuring OnlyOffice JWT"
