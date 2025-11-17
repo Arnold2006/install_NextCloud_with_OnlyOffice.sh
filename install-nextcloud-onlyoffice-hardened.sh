@@ -5,14 +5,14 @@ set -euo pipefail
 # CONFIGURATION SECTION
 #############################################
 # Set these variables using environment or prompt if not set
-DOMAIN="${DOMAIN:-}"
-DB_ROOT_PASSWORD="${DB_ROOT_PASSWORD:-}"
-DB_NAME="${DB_NAME:-nextcloud}"
-DB_USER="${DB_USER:-nc_user}"
-DB_PASS="${DB_PASS:-}"
-NC_ADMIN_USER="${NC_ADMIN_USER:-admin}"
-NC_ADMIN_PASS="${NC_ADMIN_PASS:-}"
-ONLYOFFICE_JWT="${ONLYOFFICE_JWT:-}"
+DOMAIN="files.tera-sat.com"
+DB_ROOT_PASSWORD="KziAQzSaAn9b#GXY"
+DB_NAME="nextcloud"
+DB_USER="nc_user"
+DB_PASS="xY4d!t77zcmyDB5m"
+NC_ADMIN_USER="admin"
+NC_ADMIN_PASS="NY46ZRTR90wwZZ"
+ONLYOFFICE_JWT="d4f8a9b7c2e1f6d3a5b9c8e7f2a1d6c3e8b4f0a7"
 
 if [[ -z "$DOMAIN" || -z "$DB_ROOT_PASSWORD" || -z "$DB_PASS" || -z "$NC_ADMIN_PASS" || -z "$ONLYOFFICE_JWT" ]]; then
   echo "You must export DOMAIN, DB_ROOT_PASSWORD, DB_PASS, NC_ADMIN_PASS, and ONLYOFFICE_JWT as environment variables."
