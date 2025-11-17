@@ -85,7 +85,7 @@ NEXTCLOUD_URL=$(echo "$NEXTCLOUD_LATEST_JSON" | jq -r '.assets[] | select(.name|
 if [[ -z "$NEXTCLOUD_URL" ]]; then
   echo "Unable to find Nextcloud ZIP URL from nextcloud-releases/server repo"; exit 1
 fi
-NEXTCLOUD_ZIP=$(basename "$NEXTCLOUD_URL")
+NEXTCLOUD_ZIP=/tmp/$(basename "$NEXTCLOUD_URL")
 wget -O "$NEXTCLOUD_ZIP" "$NEXTCLOUD_URL"
 
 msg "Extracting Nextcloud"
